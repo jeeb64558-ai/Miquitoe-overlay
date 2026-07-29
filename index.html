@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MiquitoE Social Overlay</title>
+<style>
+  :root{
+    --scale: 1;
+    --text: #ffffff;
+    --panel: rgba(12,12,16,.78);
+    --border: rgba(255,255,255,.16);
+  }
+  *{box-sizing:border-box}
+  html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:transparent;
+    font-family:Arial,Helvetica,sans-serif;
+  }
+  .wrap{
+    width:max-content;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    padding:8px 12px;
+    border:1px solid var(--border);
+    border-radius:18px;
+    background:var(--panel);
+    color:var(--text);
+    transform:scale(var(--scale));
+    transform-origin:top left;
+    box-shadow:0 8px 25px rgba(0,0,0,.35);
+    animation:floatIn .7s ease-out both;
+  }
+  .item{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    padding:6px 9px;
+    border-radius:12px;
+    white-space:nowrap;
+  }
+  .icon{
+    width:22px;
+    height:22px;
+    display:grid;
+    place-items:center;
+    font-size:15px;
+    font-weight:900;
+    color:white;
+    border-radius:6px;
+    line-height:1;
+  }
+  .twitch{background:#9146FF}
+  .kick{background:#53FC18;color:#050505}
+  .youtube{background:#FF0033}
+  .facebook{background:#1877F2}
+  .name{
+    font-size:18px;
+    font-weight:800;
+    letter-spacing:.2px;
+    text-shadow:0 2px 5px rgba(0,0,0,.45);
+  }
+  .divider{
+    width:1px;
+    height:27px;
+    background:rgba(255,255,255,.18);
+  }
+  @keyframes floatIn{
+    from{opacity:0;transform:translateY(-10px) scale(var(--scale))}
+    to{opacity:1;transform:translateY(0) scale(var(--scale))}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="item">
+      <div class="icon twitch">T</div><div class="name">Miquitoe</div>
+    </div>
+    <div class="divider"></div>
+    <div class="item">
+      <div class="icon kick">K</div><div class="name">Miquitoe</div>
+    </div>
+    <div class="divider"></div>
+    <div class="item">
+      <div class="icon youtube">▶</div><div class="name">Miquitoe</div>
+    </div>
+    <div class="divider"></div>
+    <div class="item">
+      <div class="icon facebook">f</div><div class="name">Miquitoe</div>
+    </div>
+  </div>
+</body>
+</html>
